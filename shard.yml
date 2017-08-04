@@ -1,0 +1,13 @@
+name: gen_server
+version: 0.1.0
+
+authors:
+  -  <>
+
+targets:
+  gen_server:
+    main: src/gen_server.cr
+
+crystal: 0.23.1
+
+license: MIT
