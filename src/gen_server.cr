@@ -1,11 +1,11 @@
 require "./gen_server/*"
 
 module GenServer
-  class OTP
-    def initialize(state = [] of Int32)
-      @channel = Channel({Int32, String}).new
-      @state = state
+  class OTP(T)
+    def initialize(@value : T)
+      @channel = Channel(T).new
       @mailbox = [] of String
+      @state = [] of Int32
       init()
     end
 
@@ -46,10 +46,8 @@ module GenServer
 end
 
 class Foo
-  include GenServer
-
   def initialize
-    @pid = GenServer::OTP.new
+    @pid = GenServer::OTP({Int32, String}).new({0, ""})
   end
 
   def send(message, from = self)
