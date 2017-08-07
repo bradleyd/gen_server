@@ -1,6 +1,6 @@
 # gen_server
 
-TODO: Write a description here
+This is only here for testing.  This code should not be take seriously or used =]
 
 ## Installation
 
